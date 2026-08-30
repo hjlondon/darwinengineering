@@ -43,7 +43,7 @@ button{font-family:var(--font-display);cursor:pointer}
   color:rgba(255,255,255,0.6);font-family:var(--font-body);font-size:13px;text-align:center;padding:16px;
 }
 
-.btn{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.06em;font-size:13px;font-weight:600;border:none;border-radius:var(--radius-btn);padding:14px 24px;cursor:pointer;transition:background 0.14s,transform 0.14s}
+.btn{display:inline-block;text-align:center;font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.06em;font-size:13px;font-weight:600;border:none;border-radius:var(--radius-btn);padding:14px 24px;cursor:pointer;transition:background 0.14s,transform 0.14s}
 .btn-primary{background:var(--accent-primary);color:var(--text-on-accent)}
 .btn-primary:hover{background:var(--accent-primary-hover);transform:translateY(-2px)}
 .btn-primary:active{background:var(--accent-primary-active);transform:translateY(0)}
@@ -91,6 +91,22 @@ label.field-label{font-family:var(--font-display);font-size:12px;font-weight:600
 .benefit-icon{width:32px;height:32px;border-radius:var(--radius-sm);background:var(--accent-primary);display:flex;align-items:center;justify-content:center;color:var(--text-on-accent);font-family:var(--font-display);font-weight:700;font-size:14px}
 .benefit-item p{font-family:var(--font-body);font-size:14px;color:var(--text-secondary);margin:0;line-height:1.5}
 
+.hierarchy-row{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--border-default)}
+.hierarchy-row:last-child{border-bottom:none}
+
+/* ---------- Responsive breakpoints ---------- */
 @media (max-width:900px){
   .benefit-row{grid-template-columns:1fr 1fr}
+  header{padding:16px 24px !important}
+  section, .stage-carbon, .stage-ember, .hero-inner{padding-left:24px !important;padding-right:24px !important}
+}
+
+@media (max-width:600px){
+  .benefit-row{grid-template-columns:1fr}
+  .hierarchy-row{grid-template-columns:1fr;gap:8px}
+  .btn{padding:12px 18px;font-size:12px}
+  header{padding:14px 16px !important}
+  header nav{gap:16px !important}
+  section, .stage-carbon, .stage-ember, .hero-inner{padding-left:16px !important;padding-right:16px !important}
+  table{font-size:13px}
 }
