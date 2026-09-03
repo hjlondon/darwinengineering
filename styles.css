@@ -94,6 +94,16 @@ label.field-label{font-family:var(--font-display);font-size:12px;font-weight:600
 .hierarchy-row{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--border-default)}
 .hierarchy-row:last-child{border-bottom:none}
 
+/* ---------- Scroll-up reveal animation ---------- */
+.reveal-up{opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(.21,.6,.35,1),transform 0.7s cubic-bezier(.21,.6,.35,1)}
+.reveal-up.is-visible{opacity:1;transform:translateY(0)}
+.reveal-up.reveal-delay-1{transition-delay:0.1s}
+.reveal-up.reveal-delay-2{transition-delay:0.22s}
+.reveal-up.reveal-delay-3{transition-delay:0.34s}
+@media (prefers-reduced-motion:reduce){
+  .reveal-up{opacity:1;transform:none;transition:none}
+}
+
 /* ---------- Responsive breakpoints ---------- */
 @media (max-width:900px){
   .benefit-row{grid-template-columns:1fr 1fr}
